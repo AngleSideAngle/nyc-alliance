@@ -1,41 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import TeamCard from '../components/TeamCard.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+	<main class="max-w-[100rem] w-full mx-auto px-8 flex-auto justify-center">
+		<div class="prose mx-auto max-w-[100rem]">
+			<p class="justify-self-center mx-auto">
+				
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. In efficitur urna vitae metus venenatis viverra. Etiam mauris tortor, tempus nec imperdiet vel, pharetra eu nunc. Aliquam blandit diam sed arcu semper, finibus vulputate ex hendrerit. Quisque non ullamcorper ipsum. Maecenas venenatis accumsan lorem eu cursus. Integer tincidunt tempor quam at accumsan. Aliquam ac varius augue, ac vestibulum dolor. Quisque tincidunt eu nulla sed condimentum. Pellentesque placerat fermentum nisl, id convallis diam imperdiet vitae. Nam interdum ex a nisi ultrices aliquet. Mauris ullamcorper porta ipsum, quis mattis purus tempus tincidunt.
+
+			Nam efficitur orci et porta gravida. Ut arcu dui, mollis vel lorem ac, ultrices posuere libero. Quisque vestibulum gravida nunc in semper. Nullam at aliquet turpis. Praesent dolor nisi, laoreet at mauris vel, consectetur feugiat ipsum. Sed euismod, justo gravida euismod molestie, erat nisl imperdiet odio, ac euismod purus eros vel libero. Aliquam sit amet tincidunt diam, et tempor nunc. Morbi vehicula orci molestie viverra dapibus. Cras vel nulla in ante varius tempor. Nullam laoreet elit sem, id aliquam lectus aliquam ut. Aliquam sapien purus, pretium vel tempus ut, varius at sapien. 
+			</p>
+			<h2>Teams</h2>
+		</div>
+		<div class="grid grid-cols-2 content-evenly">
+			<TeamCard href="" title="StuyPulse" body="example text"/>
+			<TeamCard href="" title="SciBorgs" body="more example text"/>
+		</div>
 	</main>
 </Layout>
 
-<style>
+<!-- <style>
 	main {
 		margin: auto;
 		padding: 1.5rem;
@@ -78,4 +64,4 @@ import Card from '../components/Card.astro';
 		gap: 1rem;
 		padding: 0;
 	}
-</style>
+</style> -->
