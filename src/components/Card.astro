@@ -8,7 +8,14 @@ export interface Props {
 const { href, title, body } = Astro.props;
 ---
 
-<li class="link-card">
+<div class="card bg-base shadow-2xl my-4 w-60">
+	<a href="{href}" class="card-body">
+		<h2 class="card-title">{title}</h2>
+		<p>{body}</p>
+	</a>
+</div>
+
+<!-- <li class="link-card">
 	<a href={href}>
 		<h2>
 			{title}
@@ -60,4 +67,4 @@ const { href, title, body } = Astro.props;
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent));
 	}
-</style>
+</style> -->

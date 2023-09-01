@@ -1,0 +1,14 @@
+---
+export interface Props {
+    images: Array<string>;
+}
+
+const { images } = Astro.props as Props;
+---
+
+
+<div class="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
+    {images.map(image => (
+        <div class="carousel-item"><img src={image} class="rounded-box"/></div>
+    ))}
+</div>
