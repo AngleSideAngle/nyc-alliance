@@ -1,18 +1,18 @@
 ---
 export interface Props {
-	title: string;
-	body: string;
-	href: string;
+  title: string;
+  body: string;
+  href: string;
 }
 
 const { href, title, body } = Astro.props;
 ---
 
 <div class="card bg-base shadow-2xl my-4 w-60">
-	<a href="{href}" class="card-body">
-		<h2 class="card-title">{title}</h2>
-		<p>{body}</p>
-	</a>
+  <a href="{href}" class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <p>{body}</p>
+  </a>
 </div>
 
 <!-- <li class="link-card">

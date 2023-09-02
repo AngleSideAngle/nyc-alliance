@@ -1,32 +1,44 @@
 ---
 export interface NavItem {
-	title: string;
-	href: string;
+  title: string;
+  href: string;
 }
 
 export interface Props {
-  items: NavItem[],
-  events: NavItem[],
+  items: NavItem[];
+  events: NavItem[];
 }
 
-const { items, events } = Astro.props as Props
+const { items, events } = Astro.props as Props;
 ---
 
 <header class="sticky top-0">
-  <nav class="navbar bg-base-100/75 w-auto m-4 border-solid border-4 shadow-xl dark:border-purple-900 rounded-xl backdrop-blur-md flex flex-wrap">
+  <nav
+    class="navbar bg-base-100/75 w-auto m-4 border-solid border-4 shadow-xl dark:border-purple-900 rounded-xl backdrop-blur-md flex flex-wrap"
+  >
     <div class="flex-1">
       <a href="/" class="btn btn-ghost normal-case text-xl">NYC Alliance</a>
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
-        {items.map((item) => <li><a href={item.href}>{item.title}</a></li>)}
+        {
+          items.map((item) => (
+            <li>
+              <a href={item.href}>{item.title}</a>
+            </li>
+          ))
+        }
         <li>
           <details>
-            <summary>
-              Events
-            </summary>
+            <summary> Events</summary>
             <ul class="p-2 bg-base-100">
-              {events.map((event) => <li><a href={event.href}>{event.title}</a></li>)}
+              {
+                events.map((event) => (
+                  <li>
+                    <a href={event.href}>{event.title}</a>
+                  </li>
+                ))
+              }
             </ul>
           </details>
         </li>
@@ -34,4 +46,3 @@ const { items, events } = Astro.props as Props
     </div>
   </nav>
 </header>
-
