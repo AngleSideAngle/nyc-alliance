@@ -5,20 +5,31 @@ export interface NavItem {
 }
 
 export interface Props {
-  items: NavItem[]
+  items: NavItem[],
+  events: NavItem[],
 }
 
-const { items } = Astro.props as Props
+const { items, events } = Astro.props as Props
 ---
 
-<heade>
-  <nav class="navbar bg-base-100/75 sticky top-4 w-auto m-4 border-solid border-4 shadow-xl dark:border-purple-900 rounded-xl backdrop-blur-md">
+<header class="sticky top-4">
+  <nav class="navbar bg-base-100/75 w-auto m-4 border-solid border-4 shadow-xl dark:border-purple-900 rounded-xl backdrop-blur-md">
     <div class="flex-1">
       <a href="/" class="btn btn-ghost normal-case text-xl">NYC Alliance</a>
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
         {items.map((item) => <li><a href={item.href}>{item.title}</a></li>)}
+        <li>
+          <details>
+            <summary>
+              Events
+            </summary>
+            <ul class="p-2 bg-base-100">
+              {events.map((event) => <li><a href={event.href}>{event.title}</a></li>)}
+            </ul>
+          </details>
+        </li>
       </ul>
     </div>
   </nav>

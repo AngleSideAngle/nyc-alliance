@@ -6,11 +6,17 @@ export interface Props {
 const { title } = Astro.props;
 
 import Header, {type NavItem} from '../components/Header.astro';
+import Footer from "../components/Footer.astro";
 import {ViewTransitions} from 'astro:transitions';
 
 const nav = [
 	{title: "Landing", href: "/index.html"},
-	{title: "News", href: "/news.html"}
+	{title: "Posts", href: "/posts.html"},
+	{title: "Team", href: "/team.html"}
+]
+
+const events = [
+	{title: "Summer 2024", href: "/events/summer-2024.html"},
 ]
 ---
 
@@ -25,8 +31,9 @@ const nav = [
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body>
-		<Header items={nav} />
+	<body class="min-h-screen flex flex-col">
+		<Header items={nav} events={events} />
 		<slot />
+		<Footer />
 	</body>
 </html>
