@@ -1,6 +1,6 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -9,7 +9,7 @@ import Layout from "./Layout.astro";
 ---
 
 <Layout title={title}>
-    <main class="prose max-w-[60rem] w-full mx-auto my-8 p-8">
-        <slot />
-    </main>
+  <main class="prose max-w-[60rem] w-full mx-auto my-8 p-8">
+    <slot />
+  </main>
 </Layout>

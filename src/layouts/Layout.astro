@@ -1,39 +1,37 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 
-import Header, {type NavItem} from '../components/Header.astro';
+import Header, { type NavItem } from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import {ViewTransitions} from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 
 const nav = [
-	{title: "Landing", href: "/"},
-	{title: "Posts", href: "/posts"},
-	{title: "Team", href: "/team"}
-]
+  { title: "Landing", href: "/" },
+  { title: "Posts", href: "/posts" },
+  { title: "Team", href: "/team" },
+];
 
-const events = [
-	{title: "Summer 2024", href: "/events/summer-2024"},
-]
+const events = [{ title: "Summer 2024", href: "/events/summer-2024" }];
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Empowering students through robotics.">
-		<meta name="viewport" content="width=device-width" />
-		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<ViewTransitions />
-	</head>
-	<body class="min-h-screen flex flex-col">
-		<Header items={nav} events={events} />
-		<slot />
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Empowering students through robotics." />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Header items={nav} events={events} />
+    <slot />
+    <Footer />
+  </body>
 </html>
